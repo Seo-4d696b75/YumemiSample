@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">YumemiSampleApp</string>
+    <string name="activity_title">Contributors List</string>
+    <string name="activity_message">Click item to show more details</string>
+    <string name="api_url">https://api.github.com/repos/googlesamples/android-architecture-components/contributors</string>
+    <string name="data_name_key">login</string>
+</resources>
