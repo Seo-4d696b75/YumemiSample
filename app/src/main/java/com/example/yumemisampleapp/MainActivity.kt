@@ -10,14 +10,19 @@ import com.github.kittinunf.fuel.httpGet
 import com.github.kittinunf.result.Result
 import org.json.JSONArray
 import org.json.JSONException
-import org.json.JSONObject
 
+/**
+ *
+ * This activity fetch data with HTTP request and show them in a list
+ */
 class MainActivity : AppCompatActivity() {
 
     private var mListView : ListView? = null
     private var mData : JSONArray? = null
 
-    val KEY_DATA_LIST = "data_list"
+    companion object {
+        private const val KEY_DATA_LIST = "data_list"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

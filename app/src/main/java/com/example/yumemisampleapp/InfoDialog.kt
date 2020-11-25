@@ -3,7 +3,6 @@ package com.example.yumemisampleapp
 import android.app.AlertDialog
 import android.app.Dialog
 import android.content.Context
-import android.icu.text.Transliterator
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,13 +11,13 @@ import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.TextView
 import androidx.fragment.app.DialogFragment
-import java.util.*
-import java.util.stream.Collectors
 import kotlin.collections.ArrayList
 
 /**
  * @author Seo-4d696b75
  * @version 2020/11/25.
+ * This dialog show details about the given account.
+ * Info of the account is passed as Bundle
  */
 class InfoDialog : DialogFragment() {
 
