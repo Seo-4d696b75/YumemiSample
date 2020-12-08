@@ -9,7 +9,7 @@ Sample Android application written in Kotlin.
 
 ## Appeal Points
 
-- HTTPリクエストの実装は`fuel`ライブラリを使用して簡潔に
-- Activityの再生成時にもデータを保存・復元する
-- 一覧表示だけでは名前だけ示して、詳細データはダイアログで表示
-- DialogFragmentの再生成も考慮してデータをBundleで渡し保存
+- Jetpack を利用したモダンで簡潔な設計
+    - DataRepository アプリで使用するデータ（contributor一覧）の取得・保持を管理する
+    - *ViewModel 各Activity, Fragmentで必要になるデータの取得・処理を担う
+    - Activity, Fragment はViewを適宜更新してUIの操作に徹底
