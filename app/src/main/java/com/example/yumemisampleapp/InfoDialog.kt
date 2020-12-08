@@ -11,15 +11,22 @@ import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.TextView
 import androidx.fragment.app.DialogFragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import kotlin.collections.ArrayList
 
 /**
  * @author Seo-4d696b75
  * @version 2020/11/25.
  * This dialog show details about the given account.
- * Info of the account is passed as Bundle
+ * Info of the account is passed as BundleD
  */
 class InfoDialog : DialogFragment() {
+
+    private val viewModel : InfoViewModel by lazy {
+        val factory = InfoViewModel.getFactory((activity?.application as MyApplication).repository)
+        ViewModelProvider(this, factory).get(InfoViewModel::class.java)
+    }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val builder = AlertDialog.Builder(context)
@@ -28,15 +35,14 @@ class InfoDialog : DialogFragment() {
             dismiss()
         }
 
-        val data : List<Bundle>? = arguments?.getParcelableArrayList(Companion.KEY_DATA)
-        if ( data != null && context != null ){
+        arguments?.getInt(Companion.KEY_DATA_INDEX)?.let { index ->
+
             val inflater = context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             val view = inflater.inflate(R.layout.dialog_details, null, false)
-            val list = ArrayList<Pair<String,String>>()
-            for ( d in data ){
-                list.add(Pair<String,String>(d.getString("key", ""), d.getString("value","")))
-            }
-            view.findViewById<ListView>(R.id.details_list).adapter = InfoAdapter(context!!, list)
+            val listView =  view.findViewById<ListView>(R.id.details_list)
+            viewModel.getDetails(index).observe(this, Observer {
+                listView.adapter = InfoAdapter(context!!, it)
+            })
             builder.setView(view)
         }
 
@@ -59,6 +65,6 @@ class InfoDialog : DialogFragment() {
     }
 
     companion object {
-        const val KEY_DATA = "bundle_key_data"
+        const val KEY_DATA_INDEX = "bundle_key_index"
     }
 }
