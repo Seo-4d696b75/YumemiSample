@@ -6,18 +6,12 @@ import android.util.Log
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.ListView
-import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
-import com.github.kittinunf.fuel.httpGet
-import com.github.kittinunf.result.Result
-import org.json.JSONArray
-import org.json.JSONException
 
 /**
  *
- * This activity fetch data with HTTP request and show them in a list
+ * This activity show list of the data
  */
 class MainActivity : AppCompatActivity() {
 

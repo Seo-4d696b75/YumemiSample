@@ -13,13 +13,12 @@ import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import kotlin.collections.ArrayList
 
 /**
  * @author Seo-4d696b75
  * @version 2020/11/25.
  * This dialog show details about the given account.
- * Info of the account is passed as BundleD
+ * Info of which account is to be shown is passed as Bundle
  */
 class InfoDialog : DialogFragment() {
 

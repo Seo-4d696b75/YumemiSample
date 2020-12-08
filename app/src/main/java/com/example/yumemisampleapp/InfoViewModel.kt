@@ -7,6 +7,7 @@ import androidx.lifecycle.map
 import java.lang.IllegalArgumentException
 
 /**
+ * This view model manages the data in InfoDialog
  * @author Seo-4d696b75
  * @version 2020/12/04.
  */

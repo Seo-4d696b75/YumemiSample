@@ -1,15 +1,12 @@
 package com.example.yumemisampleapp
 
-import android.provider.ContactsContract
 import android.util.Log
-import android.util.MutableDouble
 import androidx.lifecycle.*
-import androidx.lifecycle.ViewModelProvider.Factory
 import kotlinx.coroutines.launch
 import java.lang.IllegalArgumentException
-import java.util.*
 
 /**
+ * data in MainActivity and interaction with that
  * @author Seo-4d696b75
  * @version 2020/12/04.
  */

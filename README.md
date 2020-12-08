@@ -5,6 +5,7 @@ Sample Android application written in Kotlin.
 ## App Usage
 
 - MainActivityにcontributorの一覧が表示されます
+- 右下のフローティングボタンでデータ再取得ができます
 - 各contributorの名前をクリックすると詳細情報を示すダイアログを表示します
 
 ## Appeal Points
